@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #617E96;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.main-container {
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 37px 40px 40px #27272771;
+    width: 100%;
+    height: 70%;
+    max-width: 1000px;
+    max-height: 1000px;
+    overflow: hidden;
+}
+
+.info-container {
+    flex: 1;
+    padding: 2rem;
+    background: #455F75;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+}
+
+.login-container {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+img {
+    width: 100px; /* Ajuste o tamanho da imagem conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-bottom: 1rem
+}
+
+.t1 {
+    font-size: 400%;
+    color: #ffffff;
+    margin-top: 7rem;
+    font-weight: lighter;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 0;
+}
+
+.t2 {
+    font-size: 400%;
+    color: #27C29B;
+    font-weight:900;
+    margin-top: 0;
+    margin-bottom: 5rem;
+}
+
+p {
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 0.5rem;
+    color: #333;
+    text-align: left;
+}
+
+input {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.options label {
+    margin: 0;
+}
+
+.s {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.term {
+    margin-top: 20px;
+}
+
+a {
+    color: #55abf1;
+    text-decoration: none;
+}
+
+button {
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+}
+
+button[type="submit"] {
+    background-color: #455F75;
+    color: white;
+}
+
+.register {
+    color: #666;
+    font-size: 0.875rem;
+    margin-top: 1rem;
+    justify-content: center;
+}
