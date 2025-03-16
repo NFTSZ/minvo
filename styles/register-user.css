@@ -1,0 +1,161 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #617E96;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.main-container {
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 37px 40px 40px #27272771;
+    width: 100%;
+    height: 70%;
+    max-width: 1000px;
+    max-height: 1000px;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.register-container {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.toggle-buttons {
+    display: flex;
+    justify-content: center;
+    margin-right: 50%;
+    margin-left: 50%;
+    font-size: 2rem;
+    gap: 10px;
+    padding: 10px 30px;
+    border: none; 
+}
+
+button[type="button"].color {
+    font-weight: 600;
+    background-color: #455F75;
+    color: white;
+    padding: 10px 70px;
+    border-radius: 8px;
+    border: 2px solid #455F75;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button[type="button"].border {
+    font-weight: 600;
+    background-color: transparent; 
+    color: #384D5E; 
+    border: 1px solid #455F75; 
+    border-radius: 8px;
+    padding: 10px 60px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.row {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.form-group.half {
+    flex: 1; 
+    min-width: 200px
+}
+
+label {
+    color: #384D5E;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"]{
+    color: #384D5E;
+    font-weight: 400;
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.options {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-top: 22px;
+    color: #384D5E;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.options input {
+    margin-left: 10px; 
+}
+
+.form-group {
+    width: 100%; /* Faz o campo de formulário ocupar toda a largura disponível */
+}
+
+.row:last-child .form-group {
+    width: 100%; /* Garante que o último conjunto de campos (senha) ocupe 100% */
+}
+
+/* Garantindo que o campo de email ocupe 100% da largura */
+.row.email-row .form-group {
+    width: 100%; /* Faz o campo de email ocupar toda a largura disponível */
+}
+
+button.submit {
+    background-color: #455F75; 
+    border: 2px solid #455F75; 
+    color: white; 
+    font-size: 1rem; 
+    text-align: center; 
+    cursor: pointer; 
+    padding: 10px 95px;
+    border-radius: 10px;
+}
+
+.term {
+    color: #384D5E;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 0;
+}
+
+a {
+    color: #55abf1;
+    text-decoration: none;
+}
+
+.login {
+    color: #384D5E;
+    font-size: 1rem;
+    margin-top: 2rem;
+    justify-content: center;
+}
+
+/* Transição suave de opacidade */
+body {
+    transition: opacity 0.5s ease-out; 
+}
+
+body.fade-out {
+    opacity: 0; 
+}
+
+
