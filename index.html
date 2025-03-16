@@ -3,9 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Minvo - Login</title>
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/login.css">
 </head>
 <body>
+    <div class="main-container">
+
+        <div class="info-container">
+            <img src="assets/logo.png" alt="logo Minvo">
+            <h1 class="t1">Olá,</h1>
+            <h1 class="t2">bem vindo(a)!</h1>
+            <p>O app que organiza</p>
+            <p>seu tempo e valoriza o seu serviço!</p>
+        </div>
+
+        <div class="login-container">
+            <form>
+                <input type="email" class="email" placeholder="example@mail.com" required>
+                <input type="password" class="senha" placeholder="***********" required>
+                
+                <div class="options">
+                    <label>
+                        <input type="checkbox"> Lembre de mim
+                    </label>
+                    <a href="" class="s">Esqueceu a senha?</a>
+                </div>
+                
+                <label class="term">
+                    <input type="checkbox"> Li e aceito os <a href="#">termos de uso</a>.
+                </label>
+
+                <button type="submit">Entrar</button>
+            </form>
+
+            <p class="register">ou <a href="register-user.html">registre-se aqui</a></p>
+        </div>
+    </div>
     
+    <script src="scripts/transiction.js"></script>
+
 </body>
 </html>
