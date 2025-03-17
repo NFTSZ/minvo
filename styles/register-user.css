@@ -21,30 +21,34 @@ body.fade-out {
 
 .main-container {
     display: flex;
+    flex-direction: column;
     background: white;
     border-radius: 10px;
     box-shadow: 37px 40px 40px #27272771;
-    width: 90%;
-    height: auto;
+    width: 100%;
     max-width: 1000px;
+    height: auto;
     max-height: calc(100vh - 40px);
-    overflow: auto;
+    overflow: hidden;
+    padding: 20px;
     justify-content: center;
+    align-items: center;
 }
 
 .register-container {
-    flex: 1;
-    padding: 2rem;
+    width: 100%;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-y: auto; /* Permite rolagem no container de registro */
+    box-sizing: border-box;
+    max-height: 90vh;
 }
 
 .toggle-buttons {
     display: flex;
     justify-content: center;
-    margin-right: 50%;
-    margin-left: 50%;
     font-size: 2rem;
     gap: 10px;
     padding: 10px 30px;
@@ -75,14 +79,19 @@ button[type="button"].border {
 
 .row {
     display: flex;
-    gap: 30px;
+    gap: 10px;
     justify-content: center;
-    padding-top: 20px;
+    padding-top: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.form-group.half {
+.form-group {
     flex: 1;
     min-width: 200px;
+    width: 100%;
+    max-width: 100%;
 }
 
 label {
@@ -95,12 +104,14 @@ input[type="password"],
 input[type="tel"] {
     color: #384D5E;
     font-weight: 400;
+    max-width: 100%;
     width: 100%;
     padding: 8px;
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
+    box-sizing: border-box; 
 }
 
 .options {
@@ -111,22 +122,37 @@ input[type="tel"] {
     color: #384D5E;
     font-weight: 400;
     font-size: 1rem;
+    flex-wrap: wrap;
 }
 
 .options input {
     margin-left: 10px;
 }
 
-.form-group {
+select {
     width: 100%;
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    font-size: 1rem; 
+    color: #384D5E; 
+    background-color: white; 
+    appearance: none; 
+    cursor: pointer; 
+    margin-top: 5px;
 }
 
-.row:last-child .form-group {
-    width: 100%;
+select {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23384D5E"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
 }
 
-.row.email-row .form-group {
-    width: 100%;
+select:focus {
+    border-color: #455F75; 
+    outline: none; 
+    box-shadow: 0 0 5px rgba(69, 95, 117, 0.5); 
 }
 
 button.submit {
@@ -138,6 +164,7 @@ button.submit {
     cursor: pointer;
     padding: 10px 95px;
     border-radius: 10px;
+    width: 100%; 
 }
 
 .term {
@@ -159,6 +186,14 @@ a {
     justify-content: center;
 }
 
+.form-container {
+    display: none; /* Oculta os formulários inicialmente */
+}
+
+.form-container.active {
+    display: block; /* Exibe o formulário ativo */
+}
+
 /* Media Queries para responsividade */
 
 /* Para telas pequenas (móveis) */
@@ -169,37 +204,38 @@ a {
         height: auto;
         box-shadow: none;
         margin: 10px;
+        padding: 10px;
+        max-width: 100%;
     }
 
     .register-container {
         padding: 1rem;
+        width: 100%;
+        max-width: 100%;
     }
 
     .toggle-buttons {
-        margin-left: 0;
-        margin-right: 0;
         font-size: 1.5rem;
         padding: 8px 20px;
     }
 
     button[type="button"].color,
     button[type="button"].border {
-        font-size: 0.9rem;
+        font-size: 1.3rem;
         padding: 8px 50px;
+        padding: 8px 20px;
     }
 
     .row {
         flex-direction: column;
         align-items: flex-start;
+        gap: 10px;
     }
 
-    .form-group.half {
-        flex: 1 1 100%;
-    }
-
-    .options {
-        flex-direction: column;
-        gap: 5px;
+    .form-group {
+        flex: 1;
+        width: 100%;
+        min-width: unset;
     }
 
     button.submit {
