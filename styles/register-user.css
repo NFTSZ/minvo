@@ -13,7 +13,6 @@ body {
     height: 100vh;
     margin: 0;
     transition: opacity 0.5s ease-out;
-    overflow: hidden; /* Impede overflow horizontal */
 }
 
 body.fade-out {
@@ -38,11 +37,13 @@ body.fade-out {
 
 .register-container {
     width: 100%;
-    padding: 2rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
+    overflow-y: auto; /* Permite rolagem no container de registro */
+    box-sizing: border-box;
+    max-height: 90vh;
 }
 
 .toggle-buttons {
@@ -78,17 +79,19 @@ button[type="button"].border {
 
 .row {
     display: flex;
-    gap: 30px;
+    gap: 10px;
     justify-content: center;
-    padding-top: 20px;
+    padding-top: 10px;
     flex-wrap: wrap;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .form-group {
     flex: 1;
     min-width: 200px;
     width: 100%;
+    max-width: 100%;
 }
 
 label {
@@ -101,12 +104,14 @@ input[type="password"],
 input[type="tel"] {
     color: #384D5E;
     font-weight: 400;
+    max-width: 100%;
     width: 100%;
     padding: 8px;
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
+    box-sizing: border-box; 
 }
 
 .options {
@@ -166,11 +171,13 @@ a {
         box-shadow: none;
         margin: 10px;
         padding: 10px;
+        max-width: 100%;
     }
 
     .register-container {
         padding: 1rem;
         width: 100%;
+        max-width: 100%;
     }
 
     .toggle-buttons {
@@ -182,6 +189,7 @@ a {
     button[type="button"].border {
         font-size: 0.9rem;
         padding: 8px 50px;
+        padding: 8px 20px;
     }
 
     .row {
