@@ -173,11 +173,15 @@ a {
         height: auto;
         box-shadow: none;
         margin: 10px;
+        flex-wrap: wrap; /* Permite que os elementos se ajustem em telas menores */
+        padding: 0 10px
     }
 
     .register-container {
+        flex: 1 1 100%;
         padding: 1rem;
         max-width: 100%;
+        overflow: hidden
     }
 
     .toggle-buttons {
@@ -196,10 +200,13 @@ a {
     .row {
         flex-direction: column;
         align-items: flex-start;
+        flex-wrap: wrap;
     }
 
     .form-group.half {
         flex: 1 1 100%;
+        min-width: 200px; /* Garante que o tamanho mínimo dos campos não seja pequeno */
+        width: 100%;
     }
 
     .options {
@@ -210,6 +217,7 @@ a {
     button.submit {
         width: 100%;
         padding: 10px 20px;
+        width: 100%;
     }
 
     .login {
