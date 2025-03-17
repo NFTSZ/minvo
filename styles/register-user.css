@@ -13,7 +13,7 @@ body {
     height: 100vh;
     margin: 0;
     transition: opacity 0.5s ease-out;
-    overflow: hidden; /* Impede que a página tenha overflow horizontal */
+    overflow: hidden; /* Impede overflow horizontal */
 }
 
 body.fade-out {
@@ -29,21 +29,21 @@ body.fade-out {
     height: auto;
     max-width: 1000px;
     max-height: calc(100vh - 40px);
-    overflow: hidden; /* Impede o overflow indesejado no container principal */
+    overflow: hidden;
     justify-content: center;
-    flex-direction: row;
-    margin: 0;
-    padding: 0;
+    flex-wrap: wrap; /* Permite que os elementos se ajustem em telas menores */
+    padding: 0 10px; /* Adiciona espaço nas laterais para evitar o corte */
 }
 
 .register-container {
-    flex: 1;
+    flex: 1 1 100%; /* Ajusta para ocupar 100% da largura disponível */
     padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 100%; /* Garante que o conteúdo ocupe 100% da largura */
+    max-width: 100%;
     box-sizing: border-box;
+    overflow: hidden; /* Evita overflow */
 }
 
 .toggle-buttons {
@@ -82,11 +82,13 @@ button[type="button"].border {
     gap: 30px;
     justify-content: center;
     padding-top: 20px;
+    flex-wrap: wrap; /* Permite que as colunas se ajustem em telas menores */
 }
 
 .form-group.half {
     flex: 1;
-    min-width: 200px;
+    min-width: 200px; /* Garante que o tamanho mínimo dos campos não seja pequeno */
+    width: 100%; /* Garantir que ocupe a largura disponível */
 }
 
 label {
@@ -115,6 +117,7 @@ input[type="tel"] {
     color: #384D5E;
     font-weight: 400;
     font-size: 1rem;
+    flex-wrap: wrap;
 }
 
 .options input {
@@ -142,6 +145,7 @@ button.submit {
     cursor: pointer;
     padding: 10px 95px;
     border-radius: 10px;
+    width: 100%; /* Garante que o botão ocupe 100% da largura */
 }
 
 .term {
@@ -173,15 +177,11 @@ a {
         height: auto;
         box-shadow: none;
         margin: 10px;
-        flex-wrap: wrap; /* Permite que os elementos se ajustem em telas menores */
-        padding: 0 10px
     }
 
     .register-container {
-        flex: 1 1 100%;
         padding: 1rem;
         max-width: 100%;
-        overflow: hidden
     }
 
     .toggle-buttons {
@@ -200,13 +200,10 @@ a {
     .row {
         flex-direction: column;
         align-items: flex-start;
-        flex-wrap: wrap;
     }
 
     .form-group.half {
         flex: 1 1 100%;
-        min-width: 200px; /* Garante que o tamanho mínimo dos campos não seja pequeno */
-        width: 100%;
     }
 
     .options {
@@ -217,7 +214,6 @@ a {
     button.submit {
         width: 100%;
         padding: 10px 20px;
-        width: 100%;
     }
 
     .login {
