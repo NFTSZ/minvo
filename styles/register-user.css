@@ -129,6 +129,32 @@ input[type="tel"] {
     margin-left: 10px;
 }
 
+select {
+    width: 100%;
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    font-size: 1rem; 
+    color: #384D5E; 
+    background-color: white; 
+    appearance: none; 
+    cursor: pointer; 
+    margin-top: 5px;
+}
+
+select {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23384D5E"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+select:focus {
+    border-color: #455F75; 
+    outline: none; 
+    box-shadow: 0 0 5px rgba(69, 95, 117, 0.5); 
+}
+
 button.submit {
     background-color: #455F75;
     border: 2px solid #455F75;
@@ -160,6 +186,14 @@ a {
     justify-content: center;
 }
 
+.form-container {
+    display: none; /* Oculta os formulários inicialmente */
+}
+
+.form-container.active {
+    display: block; /* Exibe o formulário ativo */
+}
+
 /* Media Queries para responsividade */
 
 /* Para telas pequenas (móveis) */
@@ -187,7 +221,7 @@ a {
 
     button[type="button"].color,
     button[type="button"].border {
-        font-size: 0.9rem;
+        font-size: 1.3rem;
         padding: 8px 50px;
         padding: 8px 20px;
     }
