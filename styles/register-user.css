@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     background: #617E96;
@@ -6,6 +12,11 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+body.fade-out {
+    opacity: 0;
 }
 
 .main-container {
@@ -13,11 +24,11 @@ body {
     background: white;
     border-radius: 10px;
     box-shadow: 37px 40px 40px #27272771;
-    width: 100%;
-    height: 70%;
+    width: 90%;
+    height: auto;
     max-width: 1000px;
-    max-height: 1000px;
-    overflow: hidden;
+    max-height: calc(100vh - 40px);
+    overflow: auto;
     justify-content: center;
 }
 
@@ -37,7 +48,7 @@ body {
     font-size: 2rem;
     gap: 10px;
     padding: 10px 30px;
-    border: none; 
+    border: none;
 }
 
 button[type="button"].color {
@@ -53,9 +64,9 @@ button[type="button"].color {
 
 button[type="button"].border {
     font-weight: 600;
-    background-color: transparent; 
-    color: #384D5E; 
-    border: 1px solid #455F75; 
+    background-color: transparent;
+    color: #384D5E;
+    border: 1px solid #455F75;
     border-radius: 8px;
     padding: 10px 60px;
     font-size: 1rem;
@@ -70,8 +81,8 @@ button[type="button"].border {
 }
 
 .form-group.half {
-    flex: 1; 
-    min-width: 200px
+    flex: 1;
+    min-width: 200px;
 }
 
 label {
@@ -81,7 +92,7 @@ label {
 input[type="text"],
 input[type="email"],
 input[type="password"],
-input[type="tel"]{
+input[type="tel"] {
     color: #384D5E;
     font-weight: 400;
     width: 100%;
@@ -103,29 +114,28 @@ input[type="tel"]{
 }
 
 .options input {
-    margin-left: 10px; 
+    margin-left: 10px;
 }
 
 .form-group {
-    width: 100%; /* Faz o campo de formulário ocupar toda a largura disponível */
+    width: 100%;
 }
 
 .row:last-child .form-group {
-    width: 100%; /* Garante que o último conjunto de campos (senha) ocupe 100% */
+    width: 100%;
 }
 
-/* Garantindo que o campo de email ocupe 100% da largura */
 .row.email-row .form-group {
-    width: 100%; /* Faz o campo de email ocupar toda a largura disponível */
+    width: 100%;
 }
 
 button.submit {
-    background-color: #455F75; 
-    border: 2px solid #455F75; 
-    color: white; 
-    font-size: 1rem; 
-    text-align: center; 
-    cursor: pointer; 
+    background-color: #455F75;
+    border: 2px solid #455F75;
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
     padding: 10px 95px;
     border-radius: 10px;
 }
@@ -149,13 +159,91 @@ a {
     justify-content: center;
 }
 
-/* Transição suave de opacidade */
-body {
-    transition: opacity 0.5s ease-out; 
+/* Media Queries para responsividade */
+
+/* Para telas pequenas (móveis) */
+@media (max-width: 600px) {
+    .main-container {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+        margin: 10px;
+    }
+
+    .register-container {
+        padding: 1rem;
+    }
+
+    .toggle-buttons {
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 1.5rem;
+        padding: 8px 20px;
+    }
+
+    button[type="button"].color,
+    button[type="button"].border {
+        font-size: 0.9rem;
+        padding: 8px 50px;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-group.half {
+        flex: 1 1 100%;
+    }
+
+    .options {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    button.submit {
+        width: 100%;
+        padding: 10px 20px;
+    }
+
+    .login {
+        text-align: center;
+    }
 }
 
-body.fade-out {
-    opacity: 0; 
+/* Para telas médias (tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .main-container {
+        width: 80%;
+    }
+
+    .register-container {
+        padding: 1.5rem;
+    }
+
+    .toggle-buttons {
+        font-size: 1.8rem;
+    }
+
+    button[type="button"].color,
+    button[type="button"].border {
+        font-size: 1rem;
+        padding: 10px 60px;
+    }
+
+    button.submit {
+        padding: 10px 80px;
+    }
 }
 
+/* Para telas grandes (desktop) */
+@media (min-width: 1025px) {
+    .main-container {
+        width: 70%;
+    }
 
+    button.submit {
+        padding: 10px 95px;
+    }
+}

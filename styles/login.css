@@ -6,6 +6,11 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    transition: opacity 0.5s ease-out; 
+}
+
+body.fade-out {
+    opacity: 0;
 }
 
 .main-container {
@@ -18,6 +23,7 @@ body {
     max-width: 1000px;
     max-height: 1000px;
     overflow: hidden;
+    flex-direction: row; /* padrão para desktops */
 }
 
 .info-container {
@@ -41,7 +47,7 @@ body {
 img {
     width: 100px; /* Ajuste o tamanho da imagem conforme necessário */
     height: auto; /* Mantém a proporção da imagem */
-    margin-bottom: 1rem
+    margin-bottom: 1rem;
 }
 
 .t1 {
@@ -56,7 +62,7 @@ img {
 .t2 {
     font-size: 400%;
     color: #27C29B;
-    font-weight:900;
+    font-weight: 900;
     margin-top: 0;
     margin-bottom: 5rem;
 }
@@ -104,6 +110,7 @@ input {
     align-items: center;
     margin-bottom: 1rem;
 }
+
 .term {
     margin-top: 20px;
 }
@@ -140,5 +147,126 @@ body {
 }
 
 body.fade-out {
-    opacity: 0; 
+    opacity: 0;
+}
+
+/* Media Queries para responsividade */
+
+/* Para telas pequenas (móveis) */
+@media (max-width: 600px) {
+    .main-container {
+        flex-direction: column; /* Layout em coluna para dispositivos móveis */
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+        margin: 10px;
+    }
+
+    .info-container,
+    .login-container {
+        padding: 1rem;
+    }
+
+    .t1 {
+        font-size: 200%;
+        margin-top: 3rem; /* Ajuste no espaçamento superior */
+    }
+
+    .t2 {
+        font-size: 250%;
+        margin-bottom: 2rem;
+    }
+
+    img {
+        width: 80px; /* Ajuste o tamanho da imagem para telas menores */
+    }
+
+    form {
+        width: 100%;
+    }
+
+    input {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    button[type="submit"] {
+        padding: 0.75rem;
+        font-size: 1rem;
+    }
+
+    .register {
+        font-size: 0.75rem;
+    }
+}
+
+/* Para telas médias (tablets) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .main-container {
+        width: 90%;
+        height: auto;
+    }
+
+    .info-container,
+    .login-container {
+        padding: 1.5rem;
+    }
+
+    .t1 {
+        font-size: 250%;
+    }
+
+    .t2 {
+        font-size: 300%;
+    }
+
+    img {
+        width: 90px;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    input {
+        font-size: 1rem;
+        padding: 0.75rem;
+    }
+
+    button[type="submit"] {
+        padding: 0.75rem;
+    }
+
+    .register {
+        font-size: 0.875rem;
+    }
+}
+
+/* Para telas grandes (desktop) */
+@media (min-width: 1025px) {
+    .main-container {
+        flex-direction: row; /* Layout em linha para desktop */
+        width: 100%;
+    }
+
+    .info-container,
+    .login-container {
+        padding: 2rem;
+    }
+
+    .t1 {
+        font-size: 400%;
+    }
+
+    .t2 {
+        font-size: 400%;
+    }
+
+    img {
+        width: 100px;
+    }
+
+    button[type="submit"] {
+        padding: 0.75rem 1.25rem; /* Botão mais largo em telas grandes */
+    }
 }
