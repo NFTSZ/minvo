@@ -23,7 +23,7 @@ body.fade-out {
     max-width: 1000px;
     max-height: 1000px;
     overflow: hidden;
-    flex-direction: row; /* padrão para desktops */
+    flex-direction: row; 
 }
 
 .info-container {
@@ -45,8 +45,8 @@ body.fade-out {
 }
 
 img {
-    width: 100px; /* Ajuste o tamanho da imagem conforme necessário */
-    height: auto; /* Mantém a proporção da imagem */
+    width: 100px; 
+    height: auto; 
     margin-bottom: 1rem;
 }
 
